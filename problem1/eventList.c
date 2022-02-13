@@ -64,9 +64,16 @@ void RemoveEvent(EventList *this, char *name)
                 this->head = this->head->next;
                 break;
             }
+            else if (*(a->next->eventName + 2) == *(name + 2)){
+                a->next = a->next->next;
+                break;
+            }
+            a = a->next;
+        }
+        if (this->head == NULL){
+            this->isEmpty = 0;
         }        
-    }
-    
+    }   
 }
 void ListEvents(EventList *this)
 {

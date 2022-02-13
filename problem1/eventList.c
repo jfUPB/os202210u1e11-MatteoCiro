@@ -34,10 +34,18 @@ void AddEvent(EventList *this, Event *event)
 
 void RemoveEvent(EventList *this, char *name)
 {
-}
 
+}
 void ListEvents(EventList *this)
 {
-    // imprime esto si la lista está vacía
+    Event *a = this->head;
+    if(this->isEmpty == 0)
     printf("empty\n");
+    else{
+        while(a!= NULL){
+            printf("%s\n", a->eventName);
+            a = a->next;
+        }
+    }
+    DestroyEvent(a);
 }
